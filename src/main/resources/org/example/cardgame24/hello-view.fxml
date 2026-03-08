@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.example.cardgame24.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <HBox alignment="CENTER" prefHeight="0.0" spacing="50.0">
+         <children>
+            <Button fx:id="findButton" mnemonicParsing="false" text="Find a Solution" />
+            <TextField fx:id="solutionField" editable="false" />
+            <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+         </children>
+      </HBox>
+      <HBox prefHeight="242.0" prefWidth="800.0">
+         <children>
+            <ImageView fx:id="img1" fitHeight="242.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img2" fitHeight="247.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img3" fitHeight="250.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img4" fitHeight="258.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+         <children>
+            <Label text="Enter an expression:" />
+            <TextField fx:id="playerSolution" />
+            <Button fx:id="verifyButton" mnemonicParsing="false" onAction="#verifyEquation" text="Verify" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

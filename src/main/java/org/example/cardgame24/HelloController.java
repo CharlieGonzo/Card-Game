@@ -130,6 +130,7 @@ public class HelloController implements Initializable {
         if(!testOnlineConnection()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("You need an internet connection to play this game.");
+            alert.showAndWait();
             System.exit(0);
         }
         manager = new GameManager();
@@ -139,13 +140,13 @@ public class HelloController implements Initializable {
     }
 
     private boolean testOnlineConnection(){
+
         try {
-            boolean isOnline = InetAddress.getByName("8.8.8.8").isReachable(2000);
+            return InetAddress.getByName("8.8.8.8").isReachable(2000);
         } catch (IOException e) {
-            isCalculatingMessage.setText("Need internet connection for solution...");
-            return false;
+            throw new RuntimeException(e);
         }
-        return true;
+
     }
 
     private AnimationTimer startLoop(){

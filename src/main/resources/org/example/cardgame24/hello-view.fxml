@@ -16,7 +16,7 @@
       <HBox alignment="CENTER" prefHeight="0.0" spacing="50.0">
          <children>
             <Label fx:id="isCalculatingMessage" text="Solution is Calculating please wait..." />
-            <Button fx:id="hintButton" mnemonicParsing="false" onAction="#findSolution" text="Find a Solution" />
+            <Button fx:id="hintButton" mnemonicParsing="false" onAction="#findSolution" text="Press for hint" />
             <TextField fx:id="solutionField" editable="false" />
             <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
          </children>

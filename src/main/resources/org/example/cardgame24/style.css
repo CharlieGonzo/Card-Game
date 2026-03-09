@@ -1,0 +1,10 @@
+.invalid{
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
+
+.correct{
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+

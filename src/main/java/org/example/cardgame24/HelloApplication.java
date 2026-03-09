@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import org.example.cardgame24.util.AIHelper;
 import org.example.cardgame24.util.ImageContainer;
 
 import java.io.BufferedReader;
@@ -16,8 +17,11 @@ import java.util.List;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        AIHelper helper = new AIHelper();
+        helper.getSolution(new Integer[]{2, 4, 1, 4});
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        scene.getStylesheets().add(HelloApplication.class.getResource("style.css").toExternalForm());
         stage.setTitle("Card-Game-24");
         stage.setScene(scene);
         stage.show();

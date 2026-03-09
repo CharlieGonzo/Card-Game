@@ -1,17 +1,22 @@
 package org.example.cardgame24;
 
+import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import org.example.cardgame24.model.AlertTypes;
 import org.example.cardgame24.util.AlertHelper;
+import org.example.cardgame24.util.NodeActionHelper;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,7 +29,10 @@ public class HelloController implements Initializable {
     private GameManager manager; // handles game state and porperties
 
     @FXML
-    private Button findButton;
+    private Label answerLabel;
+
+    @FXML
+    private Button hintButton;
 
     @FXML
     private TextField playerSolution;
@@ -39,6 +47,9 @@ public class HelloController implements Initializable {
     private ImageView img3;
 
     @FXML
+    private Label isCalculatingMessage;
+
+    @FXML
     private ImageView img4;
 
     @FXML
@@ -49,6 +60,8 @@ public class HelloController implements Initializable {
 
     @FXML
     private Button verifyButton;
+
+    int currentHintIndex = 1;
 
     ImageView[] images;
 
@@ -62,17 +75,14 @@ public class HelloController implements Initializable {
     void verifyEquation(ActionEvent event) {
        if(manager.verify(playerSolution.getText())){
            AlertHelper.getAlert(AlertTypes.CORRECT,manager).showAndWait();
-       }else{
-           if(manager.getCurrentAns() == Integer.MIN_VALUE){
-               AlertHelper.getAlert(AlertTypes.INVALID,manager).showAndWait();
-               return; // cut method early
-           }
-           if(manager.getCurrentAns() == 24.0){
-               AlertHelper.getAlert(AlertTypes.WRONG_NUMBER,manager).showAndWait();
-           }else{
-               AlertHelper.getAlert(AlertTypes.WRONG_ANSWER,manager).showAndWait();
-           }
+           return;
        }
+       if(manager.getCurrentAns() == 24.0){
+           AlertHelper.getAlert(AlertTypes.WRONG_NUMBER,manager).showAndWait();
+       }else{
+           AlertHelper.getAlert(AlertTypes.WRONG_ANSWER,manager).showAndWait();
+       }
+
     }
 
     /**
@@ -81,17 +91,29 @@ public class HelloController implements Initializable {
      */
     @FXML
     void refresh(ActionEvent event) {
-        resetImages();
-    }
-
-    /**
-     * sets the imageViews to new cards generated {@link GameManager}
-     */
-    private void resetImages(){
         Image[] newImages = manager.generateNewCards();
         int count = 0;
         for(ImageView image : images){
             image.setImage(newImages[count++]);
+        }
+    }
+
+
+    @FXML
+    void findSolution(ActionEvent event) {
+        solutionField.setText(manager.getCurrentEquation().substring(0,currentHintIndex++));
+    }
+
+    @FXML
+    void checkInput(KeyEvent event) {
+        if (manager.validateEquation(playerSolution.getText())) {
+            NodeActionHelper.changeBackgroundToGreen(playerSolution);
+            manager.setIsValid(true);
+            answerLabel.setText(String.format("Answer: %.2f",manager.getCurrentAns()));
+        } else {
+            NodeActionHelper.changeBackgroundToRed(playerSolution);
+            answerLabel.setText("Answer:");
+            manager.setIsValid(false);
         }
     }
 
@@ -102,13 +124,46 @@ public class HelloController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try { // create game manager
-            manager = new GameManager();
-        } catch (IOException e) {
-            AlertHelper.getAlert(AlertTypes.ERROR,manager).showAndWait();
-            throw new RuntimeException(e);
+        // create a game manager
+        if(!testOnlineConnection()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("You need an internet connection to play this game.");
+            System.exit(0);
         }
+        manager = new GameManager();
         images = new ImageView[]{img1,img2,img3,img4};
-        resetImages();
+        refresh(null);
+        startLoop().start();
+    }
+
+    private boolean testOnlineConnection(){
+        try {
+            boolean isOnline = InetAddress.getByName("8.8.8.8").isReachable(2000);
+        } catch (IOException e) {
+            isCalculatingMessage.setText("Need internet connection for solution...");
+            return false;
+        }
+        return true;
+    }
+
+    private AnimationTimer startLoop(){
+        return new AnimationTimer() {
+            @Override
+            public void handle(long l) {
+                if(manager.getCurrentEquation() != null){
+                    isCalculatingMessage.setVisible(false);
+                    hintButton.setDisable(false);
+                }else{
+                    isCalculatingMessage.setVisible(true);
+                    hintButton.setDisable(true);
+                }
+                if(manager.getIsValid()){
+                    verifyButton.setDisable(false);
+                }else{
+                    verifyButton.setDisable(true);
+                }
+
+            }
+        };
     }
 }

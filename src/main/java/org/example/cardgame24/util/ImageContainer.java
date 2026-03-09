@@ -27,7 +27,6 @@ public class ImageContainer {
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-        System.out.println(imageContainer.toString());
     }
 
     private void loadImages() throws IOException {
@@ -51,9 +50,9 @@ public class ImageContainer {
 
     private void addCardToContainer(String[] split, String line){
         Card newCard = new Card(
-                split[2],
-                getValue(split[0]),
-                new Image(String.valueOf(HelloApplication.class.getResource(line.replace("\uFEFF", "").trim()))) // once again fixing powershell text mess+
+                split[2], // suit
+                getValue(split[0]), // value
+                new Image(String.valueOf(HelloApplication.class.getResource(line.replace("\uFEFF", "").trim()))) // once again fixing powershell text mess+ image
         );
         imageContainer.computeIfAbsent(split[2], k -> new LinkedList<>()).add(newCard); // if key doesnt exist, create linked list and add card, otherwise. just add card
     }
@@ -65,7 +64,7 @@ public class ImageContainer {
                     Collections.shuffle(list);
                     return list.stream();
                 }))
-                .limit(4)
+                .limit(4) // only send back 4 cards
                 .toList();
     }
 
@@ -75,7 +74,8 @@ public class ImageContainer {
             case String s when s.equals("queen") -> 12;
             case String s when s.equals("jack") -> 11;
             case String s when s.equals("ace") -> 1;
-            default -> Integer.parseInt(val.replaceAll("[^\\d]", "")); // the replace all method is to cleanup what evey mess powershell left hidden
+            default -> Integer.parseInt(val.replaceAll("[^\\d]", "")); // the replace all method is to cleanup whatever mess powershell left hidden.
         };
     }
+
 }

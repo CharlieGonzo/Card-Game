@@ -5,77 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8032340b-b4b8-4cf3-8248-aa5e5a0e63d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/GameManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/model/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/ImageContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/10_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/10_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/10_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/10_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/2_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/2_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/2_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/2_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/3_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/3_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/3_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/3_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/4_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/4_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/4_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/4_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/5_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/5_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/5_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/5_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/6_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/6_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/6_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/6_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/7_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/7_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/7_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/7_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/8_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/8_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/8_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/8_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/9_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/9_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/9_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/9_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/ace_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/ace_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/ace_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/ace_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/images.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/jack_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/jack_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/jack_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/jack_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/king_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/king_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/king_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/king_of_spades.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/queen_of_clubs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/queen_of_diamonds.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/queen_of_hearts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/queen_of_spades.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/model/AlertTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/AlertHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/ImageContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/ImageContainer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,8 +24,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,11 +39,11 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="3AdrgBX9yw8faInSYZdFAXej6Y3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -121,11 +58,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -142,6 +88,14 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -150,8 +104,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772933398744</updated>
+      <workItem from="1772976253445" duration="4877000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

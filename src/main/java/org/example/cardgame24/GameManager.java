@@ -39,9 +39,8 @@ public class GameManager {
      * @return true if formula passes all conditions, false if not
      */
     public boolean verify(String formula){
-        Integer[] currNums =new Integer[]{currentCards[0].value(),currentCards[1].value(),currentCards[2].value(),currentCards[3].value()};
-        boolean checkEq = checkEquation(formula);
-        return usedCorrectNumbers(formula,currNums) && checkEq ;
+        Integer[] currNums =new Integer[]{currentCards[0].value(),currentCards[1].value(),currentCards[2].value(),currentCards[3].value()}; // extract card values
+        return checkEquation(formula) && usedCorrectNumbers(formula,currNums);
     }
 
     /**
@@ -51,18 +50,15 @@ public class GameManager {
      */
     private boolean checkEquation(String formula){
         try {
-            Expression e = new ExpressionBuilder(formula)
-                    .build();
-            currentAns = e.evaluate();
-            System.out.println(currentAns);
+            currentAns= new ExpressionBuilder(formula).build().evaluate();
             if (currentAns == 24.0) {
-                return true;
+                return true; // return true if equation equals 24
             }
             return false;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        currentAns = Integer.MIN_VALUE;
+        currentAns = Integer.MIN_VALUE; // set this value so that front end knows that equation was invalid.
         return false;
     }
 
@@ -80,26 +76,19 @@ public class GameManager {
                 .map(m -> Integer.parseInt(m.group()))
                 .sorted()
                 .toList();
-        System.out.println(usedNumbers);
-        List<Integer> sortedDrawn = Arrays.stream(drawnCards).sorted().toList();
-        System.out.println(sortedDrawn);
-        return usedNumbers.equals(sortedDrawn);
+        List<Integer> sortedDrawn = Arrays.stream(drawnCards).sorted().toList(); // get list of numbers from cards
+        return usedNumbers.equals(sortedDrawn); // compare expected and results
     }
 
     /**
      * generates 4 random cards and updates the currentCards variable
      */
-    public void generateNewCards(){
-        System.out.println("here");
+    public Image[] generateNewCards(){
         int count = 0;
         for(Card c: container.generateCards()){
             currentCards[count++] = c;
         }
-        System.out.println(Arrays.toString(currentCards));
-    }
-
-    public Card[] getCurrentCards(){
-        return currentCards;
+        return new Image[]{currentCards[0].img(),currentCards[1].img(),currentCards[2].img(),currentCards[3].img()}; // send back array of new images
     }
 
     public double getCurrentAns(){

@@ -6,7 +6,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.example.cardgame24.model.AlertTypes;
+import org.example.cardgame24.util.AlertHelper;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,7 +21,7 @@ import java.util.ResourceBundle;
  */
 public class HelloController implements Initializable {
 
-    private GameManager manager;
+    private GameManager manager; // handles game state and porperties
 
     @FXML
     private Button findButton;
@@ -47,6 +50,8 @@ public class HelloController implements Initializable {
     @FXML
     private Button verifyButton;
 
+    ImageView[] images;
+
 
     /**
      * Verify if equation passes all test. if it does, it will alert the user that they are right
@@ -56,23 +61,17 @@ public class HelloController implements Initializable {
     @FXML
     void verifyEquation(ActionEvent event) {
        if(manager.verify(playerSolution.getText())){
-           Alert alert = new Alert(Alert.AlertType.INFORMATION);
-           alert.setContentText("You got it right! answer: " + manager.getCurrentAns());
-           alert.showAndWait();
+           AlertHelper.getAlert(AlertTypes.CORRECT,manager).showAndWait();
        }else{
            if(manager.getCurrentAns() == Integer.MIN_VALUE){
-               Alert alert = new Alert(Alert.AlertType.ERROR);
-               alert.setContentText("Your equation was invalid");
-               alert.showAndWait();
-               return;
+               AlertHelper.getAlert(AlertTypes.INVALID,manager).showAndWait();
+               return; // cut method early
            }
-           Alert alert = new Alert(Alert.AlertType.INFORMATION);
            if(manager.getCurrentAns() == 24.0){
-               alert.setContentText("You were so close, just have to use the right numbers! answer: "+manager.getCurrentAns());
+               AlertHelper.getAlert(AlertTypes.WRONG_NUMBER,manager).showAndWait();
            }else{
-               alert.setContentText("Answer was wrong, try again. Answer: " + manager.getCurrentAns());
+               AlertHelper.getAlert(AlertTypes.WRONG_ANSWER,manager).showAndWait();
            }
-           alert.showAndWait();
        }
     }
 
@@ -89,11 +88,11 @@ public class HelloController implements Initializable {
      * sets the imageViews to new cards generated {@link GameManager}
      */
     private void resetImages(){
-        manager.generateNewCards();
-        img1.setImage(manager.getCurrentCards()[0].img());
-        img2.setImage(manager.getCurrentCards()[1].img());
-        img3.setImage(manager.getCurrentCards()[2].img());
-        img4.setImage(manager.getCurrentCards()[3].img());
+        Image[] newImages = manager.generateNewCards();
+        int count = 0;
+        for(ImageView image : images){
+            image.setImage(newImages[count++]);
+        }
     }
 
     /**
@@ -103,16 +102,13 @@ public class HelloController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
+        try { // create game manager
             manager = new GameManager();
         } catch (IOException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Error loading files. Closing...");
-            alert.showAndWait();
-            System.exit(0);
+            AlertHelper.getAlert(AlertTypes.ERROR,manager).showAndWait();
             throw new RuntimeException(e);
         }
-
+        images = new ImageView[]{img1,img2,img3,img4};
         resetImages();
     }
 }

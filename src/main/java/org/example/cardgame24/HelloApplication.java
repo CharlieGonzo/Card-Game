@@ -10,14 +10,15 @@ import org.example.cardgame24.util.ImageContainer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        System.out.println(new Image(String.valueOf(HelloApplication.class.getResource("ace_of_spades.png"))).getUrl());
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        stage.setTitle("Hello!");
+        stage.setTitle("Card-Game-24");
         stage.setScene(scene);
         stage.show();
     }

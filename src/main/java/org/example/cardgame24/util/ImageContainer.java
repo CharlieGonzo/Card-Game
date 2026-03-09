@@ -20,35 +20,47 @@ import java.util.stream.Collectors;
 public class ImageContainer {
     HashMap<String, LinkedList<Card>> imageContainer;
 
-    public ImageContainer() throws IOException {
+    public ImageContainer(){
         imageContainer = new HashMap<>();
-        loadImages();
+        try {
+            loadImages();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
         System.out.println(imageContainer.toString());
     }
 
     private void loadImages() throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(HelloApplication.class.getResource("images.txt").openStream()));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(HelloApplication.class.getResource("images.txt").openStream())); // retrieve stream of file names
         String line;
-        while((line = reader.readLine()) != null) {
+        while((line = reader.readLine()) != null) { // go through list of files
             String[] split = line.split("_");
-            if(split.length < 3){
-                throw new RuntimeException("Error loading assets");
-            }
-            split[2] = split[2].substring(0, split[2].length() - 4);// cut that png off
-            Card newCard = new Card(
-                    split[2],
-                    getValue(split[0]),
-                    new Image(String.valueOf(HelloApplication.class.getResource(line.replace("\uFEFF", "").trim()))) // once again fixing powershell text mess
-            );
+            cleanUpFileName(split);
+            addCardToContainer(split,line);
 
-            imageContainer.computeIfAbsent(split[2], k -> new LinkedList<>()).add(newCard);
         }
         reader.close();
     }
 
+    private void cleanUpFileName(String[] split){
+        if(split.length < 3){ // if length is less than three, it messed up loading a file. Closing program
+            throw new RuntimeException("Error loading assets");
+        }
+        split[2] = split[2].substring(0, split[2].length() - 4);// cut that png off
+    }
+
+    private void addCardToContainer(String[] split, String line){
+        Card newCard = new Card(
+                split[2],
+                getValue(split[0]),
+                new Image(String.valueOf(HelloApplication.class.getResource(line.replace("\uFEFF", "").trim()))) // once again fixing powershell text mess+
+        );
+        imageContainer.computeIfAbsent(split[2], k -> new LinkedList<>()).add(newCard); // if key doesnt exist, create linked list and add card, otherwise. just add card
+    }
+
     public List<Card> generateCards(){
        return imageContainer.values().stream()
-                .flatMap(List::stream) // flattens all suit lists into one deck
+                .flatMap(List::stream) // flattens all suit lists into one deck to get random of all suits
                 .collect(Collectors.collectingAndThen(Collectors.toList(), list -> {
                     Collections.shuffle(list);
                     return list.stream();

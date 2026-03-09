@@ -23,7 +23,7 @@ public class AIHelper {
     public String getSolution(Integer[] nums){
         try {
             String response = model.chat("""
-                What is an equation that equals 24 just using these numbers? just give me the equation, don't say anything else.
+                What is an equation that equals 24 just using these numbers? Only can use each digit once. just give me the equation, don't say anything else.
                 """ + Arrays.toString(nums));
             return response.replaceAll(" ","");
         }catch (Exception e){

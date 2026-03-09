@@ -92,6 +92,8 @@ public class HelloController implements Initializable {
     @FXML
     void refresh(ActionEvent event) {
         Image[] newImages = manager.generateNewCards();
+        currentHintIndex = 0;
+        solutionField.clear();
         int count = 0;
         for(ImageView image : images){
             image.setImage(newImages[count++]);

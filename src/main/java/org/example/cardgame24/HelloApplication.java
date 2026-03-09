@@ -17,6 +17,7 @@ import java.util.List;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+
         AIHelper helper = new AIHelper();
         helper.getSolution(new Integer[]{2, 4, 1, 4});
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));

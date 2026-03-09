@@ -8,3 +8,16 @@
     -fx-text-fill: white;
 }
 
+.label{
+    -fx-text-fill: white;
+}
+
+#main-screen{
+    -fx-background-color: #00008B;
+}
+
+.img{
+    -fx-background-color: white;
+    -fx-border-radius: 15px;
+}
+

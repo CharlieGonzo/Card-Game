@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8032340b-b4b8-4cf3-8248-aa5e5a0e63d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/Screenshot 2026-03-09 160209.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/AIHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/AIHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772933398744</updated>
-      <workItem from="1772976253445" duration="15158000" />
+      <workItem from="1772976253445" duration="16526000" />
     </task>
     <servers />
   </component>
@@ -120,7 +120,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloController.java</url>
-          <line>155</line>
+          <line>157</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

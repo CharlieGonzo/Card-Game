@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import org.example.cardgame24.model.Card;
 import org.example.cardgame24.util.AIHelper;
+import org.example.cardgame24.util.EquationSolver;
 import org.example.cardgame24.util.ImageContainer;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
@@ -106,13 +107,14 @@ public class GameManager {
         for(Card c: container.generateCards()){
             currentCards[count++] = c;
         }
-        startBackgroundService().start();
+        currentEquation = EquationSolver.solve(getCurrNums());
         return new Image[]{currentCards[0].img(),currentCards[1].img(),currentCards[2].img(),currentCards[3].img()}; // send back array of new images
     }
 
     private Thread startBackgroundService(){
         return new Thread(() -> {
-            currentEquation = aiHelper.getSolution(getCurrNums()).split("=")[0];
+//            currentEquation = aiHelper.getSolution(getCurrNums()).split("=")[0];
+            currentEquation = EquationSolver.solve(getCurrNums());
             System.out.println(currentEquation);
         });
     }

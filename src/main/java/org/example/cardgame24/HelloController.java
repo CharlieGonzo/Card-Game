@@ -69,33 +69,36 @@ public class HelloController implements Initializable {
     /**
      * Verify if equation passes all test. if it does, it will alert the user that they are right
      * otherwise, it will alert them on what they did wrong.
+     *
      * @param event
      */
     @FXML
     void verifyEquation(ActionEvent event) {
-       if(manager.verify(playerSolution.getText())){
-           AlertHelper.getAlert(AlertTypes.CORRECT,manager).showAndWait();
-           return;
-       }
-       if(manager.getCurrentAns() == 24.0){
-           AlertHelper.getAlert(AlertTypes.WRONG_NUMBER,manager).showAndWait();
-       }else{
-           AlertHelper.getAlert(AlertTypes.WRONG_ANSWER,manager).showAndWait();
-       }
+        if (manager.verify(playerSolution.getText())) {
+            AlertHelper.getAlert(AlertTypes.CORRECT, manager).showAndWait();
+            return;
+        }
+        if (manager.getCurrentAns() == 24.0) {
+            AlertHelper.getAlert(AlertTypes.WRONG_NUMBER, manager).showAndWait();
+        } else {
+            AlertHelper.getAlert(AlertTypes.WRONG_ANSWER, manager).showAndWait();
+        }
 
     }
 
     /**
      * resets current playing cards
+     *
      * @param event
      */
     @FXML
     void refresh(ActionEvent event) {
+        solutionField.setVisible(false);
         Image[] newImages = manager.generateNewCards();
         currentHintIndex = 0;
         solutionField.clear();
         int count = 0;
-        for(ImageView image : images){
+        for (ImageView image : images) {
             image.setImage(newImages[count++]);
         }
     }
@@ -103,7 +106,8 @@ public class HelloController implements Initializable {
 
     @FXML
     void findSolution(ActionEvent event) {
-        solutionField.setText(manager.getCurrentEquation().substring(0,currentHintIndex++));
+        solutionField.setVisible(true);
+        solutionField.setText(manager.getCurrentEquation().substring(0, currentHintIndex++));
     }
 
     @FXML
@@ -111,7 +115,7 @@ public class HelloController implements Initializable {
         if (manager.validateEquation(playerSolution.getText())) {
             NodeActionHelper.changeBackgroundToGreen(playerSolution);
             manager.setIsValid(true);
-            answerLabel.setText(String.format("Answer: %.2f",manager.getCurrentAns()));
+            answerLabel.setText(String.format("Answer: %.2f", manager.getCurrentAns()));
         } else {
             NodeActionHelper.changeBackgroundToRed(playerSolution);
             answerLabel.setText("Answer:");
@@ -121,25 +125,26 @@ public class HelloController implements Initializable {
 
     /**
      * Setup before game loads.
+     *
      * @param url
      * @param resourceBundle
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // create a game manager
-        if(!testOnlineConnection()){
+       /* if (!testOnlineConnection()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("You need an internet connection to play this game.");
             alert.showAndWait();
             System.exit(0);
-        }
+        }*/
         manager = new GameManager();
-        images = new ImageView[]{img1,img2,img3,img4};
+        images = new ImageView[]{img1, img2, img3, img4};
         refresh(null);
         startLoop().start();
     }
 
-    private boolean testOnlineConnection(){
+    private boolean testOnlineConnection() {
 
         try {
             return InetAddress.getByName("8.8.8.8").isReachable(2000);
@@ -149,24 +154,22 @@ public class HelloController implements Initializable {
 
     }
 
-    private AnimationTimer startLoop(){
+    private AnimationTimer startLoop() {
         return new AnimationTimer() {
             @Override
             public void handle(long l) {
-                if(manager.getCurrentEquation() != null){
+                if (manager.getCurrentEquation() == null) {
+                    refresh(null);
+                    hintButton.setDisable(true);
+                    isCalculatingMessage.setVisible(true);
+                }else{
                     isCalculatingMessage.setVisible(false);
                     hintButton.setDisable(false);
-                }else{
-                    isCalculatingMessage.setVisible(true);
-                    hintButton.setDisable(true);
                 }
-                if(manager.getIsValid()){
-                    verifyButton.setDisable(false);
-                }else{
-                    verifyButton.setDisable(true);
+                verifyButton.setDisable(!manager.getIsValid());
                 }
 
-            }
+
         };
     }
 }

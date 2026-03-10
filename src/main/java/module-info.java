@@ -3,7 +3,6 @@ module org.example.cardgame24 {
     requires javafx.fxml;
     requires exp4j;
     requires java.desktop;
-    requires langchain4j.google.ai.gemini;
 
 
     requires java.net.http;

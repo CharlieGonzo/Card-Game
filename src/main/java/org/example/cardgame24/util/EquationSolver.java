@@ -1,13 +1,7 @@
 package org.example.cardgame24.util;
 
-import com.oracle.truffle.js.scriptengine.GraalJSScriptEngine;
 import net.objecthunter.exp4j.ExpressionBuilder;
-import org.graalvm.polyglot.Context;
-import org.graalvm.polyglot.HostAccess;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.util.*;
 
 public class EquationSolver {

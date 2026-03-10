@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox id="main-screen" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cardgame24.HelloController">
+<VBox id="main-screen" alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cardgame24.controller.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -21,7 +21,7 @@
             <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="242.0" styleClass="img">
+      <HBox alignment="CENTER" prefHeight="242.0" spacing="20.0" styleClass="img">
          <children>
             <ImageView fx:id="img1" fitHeight="242.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img" />
             <ImageView fx:id="img2" fitHeight="247.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img" />

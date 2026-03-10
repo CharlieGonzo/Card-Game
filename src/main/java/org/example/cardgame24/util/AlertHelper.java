@@ -1,7 +1,6 @@
 package org.example.cardgame24.util;
 
 import javafx.scene.control.Alert;
-import org.example.cardgame24.GameManager;
 import org.example.cardgame24.model.AlertTypes;
 
 /**

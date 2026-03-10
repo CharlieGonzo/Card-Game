@@ -18,9 +18,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        AIHelper helper = new AIHelper();
-        helper.getSolution(new Integer[]{2, 4, 1, 4});
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("intro.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         scene.getStylesheets().add(HelloApplication.class.getResource("style.css").toExternalForm());
         stage.setTitle("Card-Game-24");

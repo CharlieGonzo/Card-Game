@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8032340b-b4b8-4cf3-8248-aa5e5a0e63d0" name="Changes" comment="" />
+    <list default="true" id="8032340b-b4b8-4cf3-8248-aa5e5a0e63d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/controller/IntroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/EquationSolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/intro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/AIHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/AIHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/AlertHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cardgame24/util/AlertHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/cardgame24/hello-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,16 +28,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Record" />
         <option value="Enum" />
         <option value="CSS File" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -52,7 +70,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "list.type.of.created.stylesheet": "CSS",
@@ -82,14 +100,6 @@
       </method>
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -98,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772933398744</updated>
-      <workItem from="1772976253445" duration="17026000" />
+      <workItem from="1772976253445" duration="16865000" />
     </task>
     <servers />
   </component>
@@ -107,16 +117,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/cardgame24/HelloController.java</url>
-          <line>158</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

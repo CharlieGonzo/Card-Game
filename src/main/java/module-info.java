@@ -10,7 +10,7 @@ module org.example.cardgame24 {
 
 
     requires java.scripting;
-    requires org.graalvm.js.scriptengine;
+
 
 
 

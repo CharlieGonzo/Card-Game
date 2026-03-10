@@ -14,7 +14,7 @@ public class AIHelper {
 
     public AIHelper() {
         model = GoogleAiGeminiChatModel.builder()
-                .apiKey("AIzaSyBueAGb18WdfJ07kfy2KNz3jB_7srsVDJ0")
+                .apiKey("")
                 .modelName("gemini-2.5-flash")
                 .temperature(0.2)
                 .build();

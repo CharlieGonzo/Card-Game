@@ -103,6 +103,7 @@ public class HelloController implements Initializable {
 
     private void clearUI(){
         solutionField.setVisible(false);
+        answerLabel.setText("Answer: ");
         hintButton.setDisable(false);
         currentHintIndex = 1;
         solutionField.clear();
